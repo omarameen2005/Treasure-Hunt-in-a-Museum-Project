@@ -1,0 +1,213 @@
+# Museum Treasure Hunt - Clue Database
+# Format: ID, PROBLEM, SOLUTION, HINT, CATEGORY, MAX_ATTEMPTS, ---
+
+1
+What ancient civilization built the pyramids of Giza?
+Egyptians
+They lived along the Nile River
+History
+3
+---
+2
+What year did World War II end?
+1945
+It's in the mid-1940s
+History
+3
+---
+3
+What is the chemical symbol for gold?
+Au
+It comes from the Latin word 'Aurum'
+Science
+3
+---
+4
+How many planets are in our solar system?
+8
+Pluto is no longer counted
+Science
+3
+---
+5
+Who painted the Mona Lisa?
+Leonardo da Vinci
+He was an Italian Renaissance artist
+Art
+3
+---
+6
+What is the largest ocean on Earth?
+Pacific Ocean
+It's between Asia and the Americas
+Geography
+3
+---
+7
+In what year did the Titanic sink?
+1912
+It happened in the early 20th century
+History
+3
+---
+8
+What is the speed of light in vacuum? (in km/s)
+300000
+It's approximately 3 x 10^8 meters per second
+Science
+2
+---
+9
+Who wrote Romeo and Juliet?
+William Shakespeare
+He's known as the Bard of Avon
+Literature
+3
+---
+10
+What is the capital of France?
+Paris
+It's known as the City of Light
+Geography
+3
+---
+11
+How many sides does a hexagon have?
+6
+Think of a honeycomb cell
+Math
+3
+---
+12
+What is the smallest prime number?
+2
+It's the only even prime number
+Math
+3
+---
+13
+Who was the first person to walk on the moon?
+Neil Armstrong
+It happened during the Apollo 11 mission
+History
+3
+---
+14
+What gas do plants absorb from the atmosphere?
+Carbon Dioxide
+It's used in photosynthesis
+Science
+3
+---
+15
+What is the hardest natural substance on Earth?
+Diamond
+It's a form of carbon
+Science
+3
+---
+16
+In which country would you find the Great Wall?
+China
+It's in East Asia
+Geography
+3
+---
+17
+What is the largest mammal in the world?
+Blue Whale
+It lives in the ocean
+Science
+3
+---
+18
+Who invented the telephone?
+Alexander Graham Bell
+His first words were "Mr. Watson, come here"
+History
+3
+---
+19
+What is the square root of 144?
+12
+12 x 12 = 144
+Math
+3
+---
+20
+How many continents are there on Earth?
+7
+Antarctica is one of them
+Geography
+3
+---
+21
+What element does 'O' represent on the periodic table?
+Oxygen
+We breathe it
+Science
+3
+---
+22
+Who painted the Sistine Chapel ceiling?
+Michelangelo
+He was a famous Renaissance artist
+Art
+3
+---
+23
+What is the longest river in the world?
+Nile
+It flows through Egypt
+Geography
+3
+---
+24
+In what year did Columbus discover America?
+1492
+A famous rhyme helps: "In fourteen hundred ninety-two..."
+History
+3
+---
+25
+What is H2O commonly known as?
+Water
+You drink it every day
+Science
+3
+---
+26
+How many days are in a leap year?
+366
+It happens every 4 years
+Math
+3
+---
+27
+Who wrote "To Kill a Mockingbird"?
+Harper Lee
+The book is set in Alabama
+Literature
+3
+---
+28
+What is the largest desert in the world?
+Antarctic Desert
+Think cold, not hot!
+Geography
+2
+---
+29
+What temperature does water freeze at in Celsius?
+0
+It's the freezing point
+Science
+3
+---
+30
+Who was the first president of the United States?
+George Washington
+He's on the one-dollar bill
+History
+3
+---
