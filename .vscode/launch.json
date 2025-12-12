@@ -1,0 +1,19 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch Treasure Hunt",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\main.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen",
+            "MIMode": "gdb",
+            "miDebuggerPath": "C:\\apps\\winlibs-x86_64-posix-seh-gcc-15.2.0-mingw-w64msvcrt-13.0.0-r1\\mingw64\\bin\\gdb.exe"
+        }
+    ]
+}
