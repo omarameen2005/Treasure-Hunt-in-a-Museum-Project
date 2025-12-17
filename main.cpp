@@ -40,7 +40,6 @@ int main() {
     cout << "=== Testing Clue Solving ===\n";
     cout << "Clue: " << midRoom.entryClue.getProblem() << "\n";
 
-    
     string ans;
     cout << "Your answer: ";
     cin >> ans;
