@@ -25,6 +25,7 @@ public:
     std::shared_ptr<Room> next1;
     std::shared_ptr<Room> next2;
 
+    bool cleared = false;
 
     Room(int id, std::string name, RoomType type);
 

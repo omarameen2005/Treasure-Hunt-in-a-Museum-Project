@@ -66,7 +66,7 @@ std::vector<std::shared_ptr<Room>> MuseumGenerator::generate(int numOfIntermedia
 
     auto exitRoom = createExitRoom(999);
 
-    for (int i = 0; i < 3; i++) 
+    for (int i = 0; i < 4; i++) 
     {
         auto entrance = createEntranceRoom(id++);
         auto pathHead = buildRandomPath(id, numOfIntermediateRooms, exitRoom);

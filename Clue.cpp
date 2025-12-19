@@ -261,7 +261,7 @@ void Clue::displayProblem() const {
  * Display the hint to help the player
  */
 void Clue::displayHint() const {
-    std::cout << "\n💡 HINT: " << hint << std::endl;
+    std::cout << "\n HINT: " << hint << std::endl;
 }
 
 /**
