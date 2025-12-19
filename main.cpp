@@ -40,9 +40,11 @@ int main() {
     cout << "=== Testing Clue Solving ===\n";
     cout << "Clue: " << midRoom.entryClue.getProblem() << "\n";
 
+    
     string ans;
     cout << "Your answer: ";
-    cin >> ans;
+    cin.ignore(); 
+    getline(cin, ans);
 
     if (midRoom.entryClue.checkAnswer(ans)) {
         cout << "Correct! Clue solved.\n";
@@ -52,4 +54,3 @@ int main() {
 
     return 0;
 }
-
