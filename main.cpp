@@ -5,7 +5,6 @@
 using namespace std;
 
 int main() {
-    // Load all clues
     if (!Clue::loadFromFile("clues.txt")) {
         cout << "Failed to load clues. Make sure clues.txt exists!\n";
         return 1;
@@ -13,12 +12,10 @@ int main() {
 
     cout << "Clues loaded successfully!\n\n";
 
-    // Create three test rooms
     Room entranceRoom(0, "Entrance Hall", RoomType::ENTRANCE);
     Room midRoom(1, "Ancient Gallery", RoomType::INTERMEDIATE);
     Room exitRoom(2, "Treasure Vault", RoomType::EXIT);
 
-    // Display each room info using getters
     cout << "=== Testing Rooms ===\n\n";
 
     cout << "Room ID: " << entranceRoom.roomID << "\n";
@@ -36,7 +33,6 @@ int main() {
     cout << "Type: Exit\n";
     cout << "Exit Clue: " << exitRoom.entryClue.getProblem() << "\n\n";
 
-    // Test solving a clue manually (use getters)
     cout << "=== Testing Clue Solving ===\n";
     cout << "Clue: " << midRoom.entryClue.getProblem() << "\n";
 
