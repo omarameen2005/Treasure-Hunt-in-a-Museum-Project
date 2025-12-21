@@ -6,27 +6,7 @@ Room::Room(int id, string n, RoomType t)
 : roomID(id), name(move(n)), type(t), difficulty(Difficulty::HARD),
     next1(nullptr), next2(nullptr){
 
-    if (type == RoomType::ENTRANCE) {
-        entryClue = Clue(0,
-        "Welcome to the museum.",
-        "",
-        "Just start exploring.",
-        "Intro",
-        1);
-    }
-
-    else if (type == RoomType::EXIT) {
-        entryClue = Clue(999,
-        "Final challenge! What is the treasure?",
-        "treasure",
-        "Why did you come here?",
-        "Final",
-        3);
-    }
-
-    else {
-        entryClue = Clue::getRandomClue();
-    }
+    entryClue = Clue::getRandomClue();
 }
 
 
