@@ -6,7 +6,7 @@
 #include "Clue.h"
 #include "Room.h"
 #include "MuseumGenerator.h"
-#include "Museum.h"
+#include "museum.h"
 
 using namespace std;
 

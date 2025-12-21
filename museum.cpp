@@ -1,4 +1,4 @@
-#include "Museum.h"
+#include "museum.h"
 #include <iostream>
 
 using namespace std;
