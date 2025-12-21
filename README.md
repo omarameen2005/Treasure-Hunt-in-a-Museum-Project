@@ -1,151 +1,304 @@
-# Treasure-Hunt-in-a-Museum-Project
+# Treasure Hunt in the Museum
+A text-based adventure game where players explore a procedurally generated museum, solving puzzles and riddles to reach the ultimate treasure room.
+
+Table of Contents:-
+Overview
+Features
+Game Mechanics
+Project Structure
+Requirements
+Installation & Setup
+How to Run
+How to Play
+File Descriptions
+
+Overview:-
+Treasure Hunt in the Museum is a console-based adventure game built with C++ that demonstrates the practical application of data structures, particularly linked lists. Players navigate through a dynamically generated museum, choosing paths, solving puzzles, and accumulating points to reach the final treasure.
+Every playthrough generates a unique museum layout with randomized room connections and puzzle assignments, ensuring high replay value.
+
+Features:-
+
+Procedurally Generated Museum - Unique layout every game
+Dynamic Puzzle System - Clues loaded from external database
+Strategic Choices - EASY rooms offer 2 paths, HARD rooms have 1 path
+Scoring System - Earn points for correct answers, penalty for hints
+Hint System - Get help when stuck (costs 2 points)
+Multiple Entrances - Choose from 4 different starting points
+Map Preview - See museum structure before playing
+Input Validation - Robust error handling for user inputs
+Extensible Clue Database - Easy to add new puzzles
+
+
+Game Mechanics:-
+Room Types
+
+ENTRANCE (4 rooms): Starting points with simple introductory clues
+INTERMEDIATE (Variable): Main museum halls with challenging puzzles
+EXIT (1 room): Final treasure room with ultimate challenge
+
+Difficulty Levels
+
+EASY Rooms 🟢: Two doors to choose from, offering strategic branching
+HARD Rooms 🔴: Single path forward, more linear progression
+
+Scoring
+
+Correct Answer (No Hint): +10 points
+Correct Answer (Hint Used): +8 points (-2 point penalty)
+Wrong Answers: No point deduction, but 3 attempts maximum
+Game Over: Failed to solve clue after 3 attempts
+
+
+Project Structure:-
+treasure-hunt-museum/
+├── main.cpp              # Entry point, game initialization
+├── Museum.h              # Museum class declaration
+├── Museum.cpp            # Museum class implementation (game logic)
+├── Room.h                # Room class declaration
+├── Room.cpp              # Room class implementation
+├── Clue.h                # Clue class declaration
+├── Clue.cpp              # Clue class implementation
+├── MuseumGenerator.h     # Generator class declaration
+├── MuseumGenerator.cpp   # Procedural generation logic
+├── clues.txt             # Puzzle database (REQUIRED)
+└── README.md             # This file
+
+Requirements:-
+Software Requirements
+
+C++ Compiler with C++17 support:
+
+GCC 7.0+ (Linux/macOS)
+MinGW-w64 (Windows)
+Clang 5.0+
+MSVC 2017+ (Visual Studio)
+
+
+
+System Requirements
+
+OS: Windows 10/11, Linux, macOS
+RAM: 50 MB minimum
+Storage: 5 MB
+
+Dependencies
+
+Standard C++ Library (included with compiler)
+No external libraries required ✅
+
+
+Installation & Setup:-
+Step 1: Clone or Download
+Download all project files to a single directory:
+treasure-hunt-museum/
+├── All .cpp files
+├── All .h files
+└── clues.txt
+Step 2: Verify clues.txt
+Ensure the clues.txt file is in the same directory as your source files. The game cannot run without this file.
+Sample clues.txt format:
+1
+What has keys but no locks, space but no room?
+Keyboard
+Think about what you use for typing
+Riddle
+3
+---
+2
+I speak without a mouth and hear without ears. What am I?
+Echo
+Sound comes back to you
+Riddle
+3
+---
+Step 3: Open Terminal/Command Prompt
+Navigate to your project directory:
+Windows:
+cmdcd C:\path\to\treasure-hunt-museum
+Linux/macOS:
+bashcd /path/to/treasure-hunt-museum
+
+How to Run:-
+Quick Start (Recommended)
+Windows:
+cmdg++ *.cpp -o game.exe
+.\game.exe
+Linux/macOS:
+bashg++ *.cpp -o game
+./game
+Why This Command Works
+g++ *.cpp -o game.exe
+Let's break down this compilation command:
+
+g++: The GNU C++ compiler
+
+Compiles C++ source code into executable programs
+Part of GCC (GNU Compiler Collection)
+
+
+*.cpp: Wildcard that matches all .cpp files
+
+Automatically includes all C++ source files in the directory:
+
+main.cpp
+Museum.cpp
+Room.cpp
+Clue.cpp
+MuseumGenerator.cpp
+
+
+Why this matters: You don't need to list each file individually
+Alternative: You could write g++ main.cpp Museum.cpp Room.cpp Clue.cpp MuseumGenerator.cpp -o game.exe
+
+
+-o game.exe: Output filename specification
+
+-o flag means "output file name"
+game.exe is the name of the compiled executable
+On Windows: Use .exe extension
+On Linux/macOS: Extension is optional (use game)
+
+
+
+What happens during compilation:
+[Source Files] → [Compiler] → [Object Files] → [Linker] → [Executable]
+   *.cpp      →    g++      →    *.o       →   Link    →   game.exe
+The compiler:
 
-# Project layout
+Reads all .cpp files
+Checks for syntax errors
+Compiles each file to object code
+Links all object files together
+Creates a single executable: game.exe
 
-project/
-├── main.cpp               # Entry point
-├── Room.h/.cpp            # Room node class
-├── Clue.h/.cpp            # Clue system
-├── Museum.h/.cpp          # Game manager
-├── MuseumGenerator.h/.cpp # Random museum generator
-├── Utils.h/.cpp           # Helper functions
-└── clues.txt              # Puzzle database
+.\game.exe (Windows) or ./game (Linux/macOS)
+This command runs the compiled executable:
 
+. = Current directory
+\ (Windows) or / (Linux/macOS) = Directory separator
+game.exe = Your executable file
 
+Why you need .\ or ./:
 
+Tells the system to look in the current directory
+Without it, the system only searches PATH directories
+Security feature to prevent accidental execution
 
 
+How to Play:-
+Step 1: Start the Game
+Run the executable. You'll see:
+===== INITIALIZING MUSEUM DATA =====
+Successfully loaded 15 clues from clues.txt
 
+===== MUSEUM MAP LAYOUT =====
+[1] Entrance: 1 (HARD)
+ [5] Hall Room 5 (EASY)
+  ...
+Step 2: Choose an Entrance
+Select one of the 4 entrance rooms (1-4):
+Choose an entrance (1 to 4):
+1. Entrance: 1
+2. Entrance: 2
+3. Entrance: 3
+4. Entrance: 4
+Your choice: 1
+Step 3: Solve Puzzles
+Each room presents a clue:
+--- ROOM ---
+Name: Hall Room 5
+Clue: What has keys but no locks?
 
-Youssef 3lak el Room.h/.cpp
+Attempt 1 of 3
+Your answer: keyboard
 
-Room.h/.cpp — Room Developer
+Correct! The door unlocks.
+Points earned: 10 | Total Score: 10
+Step 4: Navigate
 
-Role: Build the core room structure, manage room connections, and implement visualization/debug methods.
+EASY Rooms: Choose between 2 doors (1 or 2)
+HARD Rooms: Automatic progression through single door
 
-Functions to implement & explanations:
+Step 5: Reach the Treasure
+Solve the final puzzle in the treasure room to win!
+========================================
+ CONGRATULATIONS! YOU FOUND THE TREASURE! 
+Final Score: 60
+========================================
 
-Function	Purpose / Explanation
-connectNext1(std::unique_ptr<Room> next)	Connect this room to another room via the first door (left). Handles movement in the game map.
-connectNext2(std::unique_ptr<Room> next)	Connect this room to another room via the second door (right). Used only for rooms with two doors.
-getExits()	Returns the number of doors/exits this room has. Useful to check navigation options.
-printInfo()	Prints room details: name, type, if visited/cleared, and current clue. Useful for player display.
-printTreeHelper(int depth)	Recursively prints the room and all rooms reachable from it with indentation for depth. Used internally by printTree().
-printTree()	Calls printTreeHelper(0) to print the full room tree for debugging or “mini-map” visualization.
+File Descriptions:-
+Core Files
+main.cpp
 
-Notes for Room Developer:
+Purpose: Program entry point
+Responsibilities:
 
-This module is the foundation; everything else depends on it.
+Initialize random seed
+Load clue database from clues.txt
+Create Museum object
+Start game loop
+Cleanup resources
 
-Make sure ownership of unique_ptrs is handled correctly to avoid crashes.
 
-Implement hasTwoDoors() helper if needed to check if next2 exists.
 
+Museum.h / Museum.cpp
 
+Purpose: Main game controller
+Key Functions:
 
-Nayra 3laky el Clue.h/.cpp
+generate(): Create museum layout
+startGame(): Main game loop
+solveCurrentClue(): Handle puzzle attempts
+navigate(): Move between rooms
+showMap(): Display museum structure
 
-Clue.h/.cpp — Clue Developer
 
-Role: Implement the puzzle system, including clue storage, random selection, and answer validation.
 
-Functions to implement & explanations:
+Room.h / Room.cpp
 
-Function	Purpose / Explanation
-loadFromFile(const std::string& filename)	Load clues from a file (e.g., clues.txt) into a database for random selection.
-getRandomClue(const std::string& category = "")	Returns a random clue. Can filter by category if specified.
-getClue(int id)	Returns a specific clue by its index/ID. Useful for testing or debugging.
-normalizeAnswer(std::string answer)	Converts a user answer to a standard format: lowercase, remove extra spaces/punctuation. Ensures correct comparison.
+Purpose: Linked list node representing museum rooms
+Key Members:
 
-Notes for Clue Developer:
+next1, next2: Pointers to connected rooms
+entryClue: Puzzle for this room
+cleared: Tracks if puzzle is solved
 
-Ensure clue structure supports problem, solution, hint, category, maxAttempts.
 
-Use normalizeAnswer whenever comparing user input with the solution.
+Key Functions:
 
-Clues must integrate with rooms (entryClue).
+connectNext1(), connectNext2(): Link rooms
+hasTwoDoors(): Check if EASY room
+printTree(): Display room structure
 
 
 
+Clue.h / Clue.cpp
 
-Habiba el Museum.h/.cpp
+Purpose: Puzzle management system
+Key Functions:
 
-Museum.h/.cpp — Game Developer
+loadFromFile(): Load puzzles from clues.txt
+getRandomClue(): Select random puzzle
+checkAnswer(): Validate user input
+normalizeAnswer(): Case-insensitive comparison
 
-Role: Manage gameplay, user interaction, score, navigation, and winning conditions.
 
-Functions to implement & explanations:
 
-Function	Purpose / Explanation
-generateNewMuseum()	Calls MuseumGenerator to create a new random museum. Resets score, player position, and history stack.
-startGame()	Main game loop. Displays entrances, lets player choose starting room, and starts navigation.
-printAllEntrances()	Prints the names of all entrance rooms.
-chooseEntrance(int choice)	Sets the player’s starting room based on entrance choice and marks it as visited.
-displayRoom()	Shows current room info and options. Calls solveCurrentClue() if needed.
-solveCurrentClue()	Manages clue solving in the current room, tracks attempts, provides hints, updates score.
-giveHint()	Prints a hint for the current clue (if available). Reduces score when used.
-navigate(int doorChoice)	Moves player to the chosen door (1 or 2) and updates current room and history stack.
-isGameWon()	Checks if the current room is an exit and cleared.
-showMap()	Calls printTree() on each entrance to show the full museum layout.
+MuseumGenerator.h / MuseumGenerator.cpp
 
-Notes for Museum Developer:
+Purpose: Procedural museum creation
+Key Functions:
 
-Use currentRoom->next1 and next2 for navigation.
+generate(): Create complete museum with 4 entrances
+buildRandomPath(): Generate room chains with branching
+createRoom(): Factory method for room creation
 
-Ensure score updates and visited/cleared flags are handled correctly.
 
-Integrate clues from ClueManager and rooms.
 
+Data Files
+clues.txt
 
-
-Omar el MuseumGenerator.h/.cpp
-
-MuseumGenerator.h/.cpp — Map / Level Designer
-
-Role: Create random museum layouts, assign clues to rooms, and handle entrances/exits.
-
-Functions to implement & explanations:
-
-Function	Purpose / Explanation
-createRoom(int id, const std::string& name, RoomType type)	Creates a new room with a given ID, name, and type. Assigns a clue to it.
-assignRandomClue(Room* room, const std::string& category = "")	Assigns a random clue to the room. Entrances and exits get special predefined clues.
-buildRandomPath(int startId, int length, RoomType type)	Generates a sequence of connected rooms, optionally with branches (2 doors). Returns head and tail for linking.
-createExitRoom(int id)	Creates the final exit room with a special treasure clue.
-generate() / generate(unsigned int seed)	Main function. Creates 4 entrance paths, generates random paths, connects tails to exit, returns entrances + exit.
-
-Notes for MuseumGenerator Developer:
-
-Return unique_ptr for ownership transfer.
-
-Ensure paths do not overlap IDs.
-
-Make use of Room functions to connect rooms.
-
-
-
-
-taha el Utils.h/.cpp
-
-Utils.h/.cpp — Utility Developer
-
-Role: Provide helper functions for string handling, randomization, input validation, and debugging.
-
-Suggested Functions & Explanations:
-
-Function	Purpose / Explanation
-string toLower(const string& s)	Converts string to lowercase. Used for answer normalization.
-string trim(const string& s)	Removes leading/trailing spaces from a string.
-string normalizeAnswer(const string& s)	Combines toLower and trim for user answer validation.
-int randomInt(int min, int max)	Returns a random integer in [min, max]. Used in MuseumGenerator.
-bool confirm(const string& prompt)	Prints prompt and returns true/false for yes/no input.
-void pause()	Pauses console output until user presses enter. Useful for readability during gameplay.
-
-Notes for Utility Developer:
-
-Keep functions modular and independent.
-
-Avoid direct dependencies on Room or Museum; other modules call them.
-
-Helps standardize repetitive tasks across the project.
-
-
+Purpose: External puzzle database
+Format: Plain text with structured data
+Required: Must exist in same directory as executable
+Customizable: Add/edit puzzles easily

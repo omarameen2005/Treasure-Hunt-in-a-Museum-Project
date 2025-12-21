@@ -9,7 +9,7 @@ Museum::Museum() {
 
 void Museum::generate() {
     MuseumGenerator generator;
-    entrances = generator.generate(3);
+    entrances = generator.generate(4);
     currentRoom = nullptr;
     score = 0;
 }
@@ -120,7 +120,7 @@ bool Museum::solveCurrentClue() {
     if (currentRoom->cleared) return true;
 
     int attempts = 0;
-    int maxAttempts = currentRoom->entryClue.getMaxAttempts(); 
+    int maxAttempts = 3; 
     string answer;
     bool hintUsed = false;
 
