@@ -1,53 +1,39 @@
 #include <iostream>
+#include <memory>
+#include <ctime>   
+#include <cstdlib> 
+
 #include "Clue.h"
 #include "Room.h"
+#include "MuseumGenerator.h"
+#include "Museum.h"
 
 using namespace std;
 
 int main() {
+    srand(static_cast<unsigned int>(time(0)));
+
+    cout << "===== INITIALIZING MUSEUM DATA =====\n";
     if (!Clue::loadFromFile("clues.txt")) {
-        cout << "Failed to load clues. Make sure clues.txt exists!\n";
+        cout << "ERROR: 'clues.txt' not found! Please create the file.\n";
         return 1;
     }
 
-    cout << "Clues loaded successfully!\n\n";
+    Museum museum;
+    museum.generate();
 
-    Room entranceRoom(0, "Entrance Hall", RoomType::ENTRANCE);
-    Room midRoom(1, "Ancient Gallery", RoomType::INTERMEDIATE);
-    Room exitRoom(2, "Treasure Vault", RoomType::EXIT);
+    cout << "\n===== MUSEUM MAP LAYOUT =====\n";
+    museum.showMap();
+    cout << "==============================\n";
 
-    cout << "=== Testing Rooms ===\n\n";
-
-    cout << "Room ID: " << entranceRoom.roomID << "\n";
-    cout << "Name: " << entranceRoom.name << "\n";
-    cout << "Type: Entrance\n";
-    cout << "Clue: " << entranceRoom.entryClue.getProblem() << "\n\n";
-
-    cout << "Room ID: " << midRoom.roomID << "\n";
-    cout << "Name: " << midRoom.name << "\n";
-    cout << "Type: Intermediate\n";
-    cout << "Random Clue: " << midRoom.entryClue.getProblem() << "\n\n";
-
-    cout << "Room ID: " << exitRoom.roomID << "\n";
-    cout << "Name: " << exitRoom.name << "\n";
-    cout << "Type: Exit\n";
-    cout << "Exit Clue: " << exitRoom.entryClue.getProblem() << "\n\n";
-
-    cout << "=== Testing Clue Solving ===\n";
-    cout << "Clue: " << midRoom.entryClue.getProblem() << "\n";
-
+    cout << "\nPress Enter to begin your adventure...";
+    cin.get();
     
-    string ans;
-    cout << "Your answer: ";
-    cin.ignore(); 
-    getline(cin, ans);
+    museum.startGame();
 
-    if (midRoom.entryClue.checkAnswer(ans)) {
-        cout << "Correct! Clue solved.\n";
-    } else {
-        cout << "Wrong. Correct answer was: " << midRoom.entryClue.getSolution() << "\n";
-    }
+    Clue::clearDatabase();
 
+    cout << "\nThank you for playing!\n";
     return 0;
 }
 
